@@ -2,6 +2,8 @@
 vector<int> nextSmallerElement(vector<int> &arr, int n)
 {
     // normal approach double loop
+
+    // then this approach
     stack<int> stck;
     vector<int> ans(n);
     stck.push(-1);
