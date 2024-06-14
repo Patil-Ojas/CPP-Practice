@@ -1,5 +1,6 @@
 // one apporach is bruteforce
 // tihs shit sucks
+
 class Solution {
 public:
     int largestRectangleArea(vector<int>& heights) 

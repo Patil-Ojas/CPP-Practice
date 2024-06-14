@@ -19,6 +19,7 @@ public:
 
         return ans;
     }
+    
     vector<int> prevSmallerElement(vector<int> &arr, int n)
     {
         // normal approach double loop
