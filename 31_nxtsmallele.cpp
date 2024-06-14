@@ -17,6 +17,5 @@ vector<int> nextSmallerElement(vector<int> &arr, int n)
         ans[i] = stck.top();
         stck.push(curr);
     }
-
     return ans;
 }

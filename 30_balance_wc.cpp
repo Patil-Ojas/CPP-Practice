@@ -1,51 +1,52 @@
-#include <bits/stdc++.h> 
+#include <bits/stdc++.h>
 
-int findMinimumCost(string str) {
+int findMinimumCost(string str)
+{
 
-    int n = str.size();
+  int n = str.size();
 
   stack<int> st;
 
-  if(n%2 == 1) return -1;
+  if (n % 2 == 1)
+    return -1;
 
-  for(int i=0;i<n;i++){
+  for (int i = 0; i < n; i++)
+  {
+    if (str[i] == '{')
+    {
 
-      if(str[i] == '{'){
+      st.push(str[i]);
+    }
+    else
+    {
 
-          st.push(str[i]);
+      if (!st.empty() && st.top() == '{')
+      {
 
-        }
-
-      else{
-
-          if (!st.empty() && st.top() == '{') {
-
-            st.pop();
-
-          } else
-
-            st.push(str[i]);
-
-        }
-
-  }
-
-  int open  = 1, close = 1;
-
-  while(!st.empty()){
-
-      if(st.top() == '{'){
-
-          open++;
-
+        st.pop();
       }
+      else
 
-      else close++;
-
-      st.pop();
-
+        st.push(str[i]);
+    }
   }
 
-  return (open/2) + (close/2);
+  int open = 1, close = 1;
 
+  while (!st.empty())
+  {
+
+    if (st.top() == '{')
+    {
+
+      open++;
+    }
+
+    else
+      close++;
+
+    st.pop();
+  }
+
+  return (open / 2) + (close / 2);
 }
